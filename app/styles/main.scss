@@ -2,25 +2,81 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-// Custom Styles
+
+// ---------------- Variables ---------------- //
+
+$primary-font: "Helvetica", "Arial", "sans-serif";
+$primary-border: solid 1px #eee;
+
+// ---------------- Generic ---------------- //
+
+// Styles that apply to multiple or non-specific sections //
+
 body {
   background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.wrapper {
+  @include outer-container;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+h1 {
+  font-family: $primary-font;
+  font-size: rem(60);
+  font-weight: Bold;
+  color: #f2f2f2;
+
+  margin: 0;
+  padding: rem(30) 0;
+}
+
+h2 {
+  color: #777;
+  font-family: $primary-font;
+  font-size: rem(24);
+  font-weight: Bold;
+
+  margin: 0;
+  padding: rem(10) 0;
+}
+
+// ---------------- Header ---------------- //
+
+header {
+  text-align: center;
+  width: 100%;
+  @include linear-gradient(to top, #ff6d25, rgb(253, 150, 111));
+}
+
+
+// ---------------- Hero ---------------- //
+
+.hero-container {
+  @include span-columns(6);
+  text-align: center;
+
+  outline: solid 1px red;
+
+  ul {
+    @include fill-parent();
+    border: $primary-border;
+
+    li {
+      border-bottom: $primary-border;
+    }
   }
+}
+
+// ---------------- Enemy ---------------- //
+
+.enemy-container {
+  @include span-columns(6);
+  text-align: center;
+
+  outline: solid 1px green;
 }

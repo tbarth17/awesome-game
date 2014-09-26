@@ -23,27 +23,39 @@
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
+    <header><h1>Welcome the Coliseum</h1></header>
 
-        <li>Sass</li>
+    <div class="wrapper">
+
+      <div class="hero-container"><!-- Hero Container -->
+
+        <!-- Dropdown Menu for Hero Character -->
+
+          <input  id="the-hero" list="hero-drop" placeholder="Choose Your Hero"/>
+            <datalist id="hero-drop">
+                <option value="Hero 1" />
+                <option value="Hero 2" />
+                <option value="Hero 3" />
+            </datalist>
+            <button type="submit">Submit</button>
+
+        <script id="hero-menu" type="text/template">
+          <option value="<%= hero-name %>">
+        </script>
+        <!-- End of Dropdown Menu for Hero Characters -->
+
+      </div><!-- End of Hero Container -->
 
 
-        <li>Modernizr</li>
+      <form class="enemy-container"><!-- Enemy Container -->
+
+        <!-- Generator for Enemies -->
+        <button type="submit">Choose your Enemies</button>
+
+      </form><!-- End of Enemy Container -->
 
 
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
-    </div>
+    </div><!-- End of Wrapper -->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
