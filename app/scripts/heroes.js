@@ -11,7 +11,7 @@ Character.prototype.getHealth = function() {
 
 function Batman() {
 	this.name = "Batman";
-	this.health = 300; 
+	this.health = 1500;
 };
 
 Batman.prototype.getHealth = function () {
@@ -23,15 +23,15 @@ Batman.prototype.getName = function () {
 };
 
 Batman.prototype.batarang = function (enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*15) + 30));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*30) + 60));
 };
 
 Batman.prototype.punch = function(enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*25) + 50));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*50) + 100));
 };
 
 Batman.prototype.kick = function(enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*35) + 70));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*70) + 140));
 };
 
 
@@ -39,7 +39,7 @@ Batman.prototype.kick = function(enemy) {
 
 function Yeti() {
 	this.name = "Yeti";
-	this.health = 200; 
+	this.health = 2000;
 };
 
 Yeti.prototype.getHealth = function () {
@@ -50,16 +50,16 @@ Yeti.prototype.getName = function () {
   return this.name;
 };
 
-Yeti.prototype.smash = function (enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*15) + 30));
+Yeti.prototype.punch = function (enemy) {
+  enemy.health = (enemy.health - (Math.floor(Math.random()*20) + 40));
 };
 
-Yeti.prototype.punch = function(enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*25) + 50));
+Yeti.prototype.smash = function(enemy) {
+  enemy.health = (enemy.health - (Math.floor(Math.random()*40) + 80));
 };
 
 Yeti.prototype.kick = function(enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*35) + 70));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*60) + 120));
 };
 
 
@@ -68,7 +68,7 @@ Yeti.prototype.kick = function(enemy) {
 
 function Jackaloupe() {
 	this.name = "Jackaloupe";
-	this.health = 250; 
+	this.health = 1000;
 };
 
 Jackaloupe.prototype.getHealth = function () {
@@ -80,15 +80,13 @@ Jackaloupe.prototype.getName = function () {
 };
 
 Jackaloupe.prototype.stab = function (enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*15) + 30));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*50) + 90));
 };
 
 Jackaloupe.prototype.punch = function(enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*25) + 50));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*70) + 140));
 };
 
 Jackaloupe.prototype.kick = function(enemy) {
-  enemy.health = (enemy.health - (Math.floor(Math.random()*35) + 70));
+  enemy.health = (enemy.health - (Math.floor(Math.random()*90) + 190));
 };
-
-
