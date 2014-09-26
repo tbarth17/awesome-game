@@ -33,6 +33,7 @@ Thug.prototype.bludgeonAttack = function(hero) {
   hero.health = (hero.health - (Math.floor(Math.random()*35) + 70));
 };
 
+var thug = new Thug()
 
 
 /////////Ruffian////////
@@ -88,3 +89,7 @@ hero.health = (hero.health - (Math.floor(Math.random()*20) + 25));
 Hoodlum.prototype.shankAttack = function(hero) {
 hero.health = (hero.health - (Math.floor(Math.random()*30) + 70));
 };
+
+
+
+
