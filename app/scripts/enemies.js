@@ -1,6 +1,6 @@
 function Hero() {
   this.health = 200;
-};
+}
 
 Hero.prototype.getHealth = function () {
   return this.health ;
