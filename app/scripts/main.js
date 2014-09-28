@@ -261,6 +261,13 @@ function enemyHealth() {
   } else if (selectedEnemy === enemy1){
       (document.getElementById('enemy1-health').value = selectedEnemy.health);
   }
+
+  if (enemy1.health <= 0 && enemy2.health <= 0 && enemy3.health <= 0) {
+    $("#vs").addClass("hidden");
+    $("#win").removeClass("hidden");
+    $("#win").addClass("win");
+  }
+
 }
 
 
@@ -269,7 +276,9 @@ function enemyHealth() {
 function batHealth() {
   var health = document.getElementById('bat-health').value = selectedHero.health;
   if (health <= 0 ) {
-    $('.right').append("<h2>You Lose<h2>");
+    $("#vs").addClass("hidden");
+    $("#lose").removeClass("hidden");
+    $("#lose").addClass("lose");
   }
 }
 
@@ -397,7 +406,12 @@ $('.kick').on('click', function() {
 /// Yeti ///
 
 function yetiHealth() {
-    document.getElementById('yeti-health').value = selectedHero.health;
+    var health = document.getElementById('yeti-health').value = selectedHero.health;
+    if (health <= 0 ) {
+    $("#vs").addClass("hidden");
+    $("#lose").removeClass("hidden");
+    $("#lose").addClass("lose");
+  }
 }
 
 $('.bash').on('click', function() {
@@ -520,7 +534,12 @@ $('.whallop').on('click', function() {
 /// Jackaloupe ///
 
 function jackHealth() {
-  return document.getElementById('jack-health').value = selectedHero.health;
+  var health = document.getElementById('jack-health').value = selectedHero.health;
+  if (health <= 0 ) {
+    $("#vs").addClass("hidden");
+    $("#lose").removeClass("hidden");
+    $("#lose").addClass("lose");
+  }
 }
 
 $('.stab').on('click', function() {
