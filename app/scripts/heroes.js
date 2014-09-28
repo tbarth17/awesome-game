@@ -1,10 +1,8 @@
-
-
 // Batman
 
 function Batman() {
   this.name = "Batman";
-  this.health = 1500;
+  this.health = 800;
 }
 
 Batman.prototype.getHealth = function () {
@@ -30,30 +28,30 @@ Batman.prototype.kickAttack = function() {
 function batarang() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 3) {
-      console.log('Batman hit with the batarang');
+      $(".message-box").prepend('Batman hit with the batarang').prepend("<br />");
       selectedHero.batarangAttack() ;
     } else {
-      console.log("Batman missed");
+      $(".message-box").prepend("Batman missed").prepend("<br />");
     }
 }
 
 function punch() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 4) {
-      console.log('Batman punched');
+      $(".message-box").prepend('Batman punched').prepend("<br />");
       selectedHero.punchAttack() ;
     } else {
-      console.log("Batman missed");
+      $(".message-box").prepend("Batman missed").prepend("<br />");
     }
 }
 
 function kick() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 5) {
-      console.log('Batman kicked');
+      $(".message-box").prepend('Batman kicked').prepend("<br />");
       selectedHero.kickAttack() ;
     } else {
-      console.log("Batman missed");
+      $(".message-box").prepend("Batman missed").prepend("<br />");
     }
 }
 
@@ -61,7 +59,7 @@ function kick() {
 
 function Yeti() {
   this.name = "Yeti";
-  this.health = 2000;
+  this.health = 1000;
 }
 
 Yeti.prototype.getHealth = function () {
@@ -87,30 +85,30 @@ Yeti.prototype.whallopAttack = function() {
 function bash() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 3) {
-      console.log('Yeti bashed!');
+      $(".message-box").prepend('Yeti bashed!').prepend("<br />");
       selectedHero.bashAttack() ;
     } else {
-      console.log("Yeti missed!");
+      $(".message-box").prepend("Yeti missed!").prepend("<br />");
     }
 }
 
 function smash() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 4) {
-      console.log('Yeti smashed!');
+      $(".message-box").prepend('Yeti smashed!').prepend("<br />");
       selectedHero.smashAttack() ;
     } else {
-      console.log("Yeti missed!");
+      $(".message-box").prepend("Yeti missed!").prepend("<br />");
     }
 }
 
 function whallop() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 5) {
-      console.log('Yeti whalloped!');
+      $(".message-box").prepend('Yeti whalloped!').prepend("<br />");
       selectedHero.whallopAttack() ;
     } else {
-      console.log("Yeti missed!");
+      $(".message-box").prepend("Yeti missed!").prepend("<br />");
     }
 }
 
@@ -118,7 +116,7 @@ function whallop() {
 
 function Jackaloupe() {
   this.name = "Jackaloupe";
-  this.health = 1000;
+  this.health = 600;
 }
 
 Jackaloupe.prototype.getHealth = function () {
@@ -144,29 +142,29 @@ Jackaloupe.prototype.flyingRabbitKickAttack = function() {
 function stab() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 3) {
-      console.log('Jackaloupe stabbed!');
+      $(".message-box").prepend('Jackaloupe stabbed!').prepend("<br />");
       selectedHero.stabAttack() ;
     } else {
-      console.log("Jackaloupe missed!");
+      $(".message-box").prepend("Jackaloupe missed!").prepend("<br />");
     }
 }
 
 function maul() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 4) {
-      console.log('Jackaloupe mauled!');
+      $(".message-box").prepend('Jackaloupe mauled!').prepend("<br />");
       selectedHero.maulAttack() ;
     } else {
-      console.log("Jackaloupe missed!");
+      $(".message-box").prepend("Jackaloupe missed!").prepend("<br />");
     }
 }
 
 function flyingRabbitKick() {
   hit = Math.floor(Math.random()*10);
   if (hit >= 5) {
-      console.log('Jackaloupe used Flying Rabbit Kick!');
+      $(".message-box").prepend('Jackaloupe used Flying Rabbit Kick!').prepend("<br />");
       selectedHero.flyingRabbitKickAttack() ;
     } else {
-      console.log("Jackaloupe missed!");
+      $(".message-box").prepend("Jackaloupe missed!").prepend("<br />");
     }
 }

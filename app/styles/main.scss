@@ -12,7 +12,9 @@ $primary-border: solid 1px #eee;
 // Styles that apply to multiple or non-specific sections //
 
 body {
-  background: #fafafa;
+  background: url("http://th01.deviantart.net/fs70/PRE/i/2013/194/c/3/ancient_battleground_by_atknebula-d6d9zuz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -72,6 +74,10 @@ h2 {
   text-align: center;
 }
 
+label {
+  font-size: rem(18);
+  color: #fff;
+}
 
 // ----------- Hero and Enemy Battle Arena ----------- //
 
@@ -91,24 +97,50 @@ h2 {
 }
 
 .vs {
-  text-align: center;
+  text-align: left;
   @include span-columns(2);
+  margin: 0;
 
   h1 {
-    color: #000;
+    color: #f7f7f7;
     padding: 0;
   }
 }
 
 .enemies {
   @include span-columns(5);
+  float: right;
+  background-color: rgba(0, 0, 0, .7);
 }
 
 .enemy-selected {
-  outline: solid 3px orange;
+  outline: solid 3px #72acd3;
 }
 
+.message-box {
+  background-color: rgba(0, 0, 0, .7);
+  color: #fff;
+  font-size: rem(12);
+  height: rem(150);
+  overflow: auto;
+  margin: rem(20);
+  padding: rem(10);
+}
+
+#enemy-one,
+#enemy-two,
+#enemy-three {
+  padding: rem(10) rem(20);
+}
+
+.enemy-info {
+  padding: rem(20) rem(10);
+  display: inline-block;
+}
+
+
 // Hero Battle Characters //
+
 
 .batman {
 
@@ -130,7 +162,7 @@ h2 {
 .yeti {
 
   h1 {
-    color: #000;
+    color: #fff;
     padding: 0;
   }
 
@@ -147,7 +179,7 @@ h2 {
 .jackaloupe {
 
   h1 {
-    color: #000;
+    color: #fff;
     padding: 0;
   }
 
@@ -162,7 +194,7 @@ h2 {
 }
 
 
-// Hero Battle Characters //
+// Enemy Battle Characters //
 
 
 .thug {
@@ -216,11 +248,6 @@ h2 {
   }
 }
 
-.enemy-info {
-  padding: rem(20) 0;
-  display: inline-block;
-}
-
 .bat-back {
   background: url("http://static.comicvine.com/uploads/original/0/40/442952-s6_citywheel.jpg");
 }
@@ -231,19 +258,16 @@ h2 {
   background-size: cover;
 }
 
+.jack-back {
+  background: url("http://www.wallpaperup.com/uploads/wallpapers/2013/07/31/125695/48da744dffa47266070d683dbe73fa8b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .yeti-btn {
   padding: 5px;
   margin-right: 15px;
   border: 1px solid #DEB887;
   border-radius: 2px;
   background: #FFF8DC;
-}
-
-progress::-webkit-progress-value {
-  background: green;
-}
-progress[value^="20"]::-webkit-progress-value,
-progress[value^="19"]::-webkit-progress-value,
-progress[value^="18"]::-webkit-progress-value{
-   background-color: red;
 }

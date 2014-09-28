@@ -1,4 +1,3 @@
-
 /////////THUG////////
 
     function Thug() {
@@ -6,8 +5,8 @@
       this.health = 550;
       this.maxHealth = 550;
       this.image = "images/thug.jpg";
-    }
 
+    }
 
 Thug.prototype.getHealth = function () {
   return this.health ;
@@ -29,35 +28,33 @@ Thug.prototype.bludgeonAttack = function() {
   selectedHero.health = (selectedHero.health - (Math.floor(Math.random()*35) + 70));
 };
 
-var thug = new Thug();
-
 function beat() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
-      console.log('Thug gave you a beatdown!');
+      $(".message-box").prepend('Thug gave you a beatdown!').prepend("<br />");
       selectedEnemy.beatAttack();
     } else {
-      console.log("Thug missed");
+      $(".message-box").prepend("Thug missed").prepend("<br />");
     }
 }
 
 function club() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
-      console.log('Thug hit you with a club');
+      $(".message-box").prepend('Thug hit you with a club').prepend("<br />");
       selectedEnemy.clubAttack();
     } else {
-      console.log("Thug missed");
+      $(".message-box").prepend("Thug missed").prepend("<br />");
     }
 }
 
 function bludgeon(hero) {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
-      console.log('Thug gave you a bludgeoning!');
+      $(".message-box").prepend('Thug gave you a bludgeoning!').prepend("<br />");
       selectedEnemy.bludgeonAttack();
     } else {
-      console.log("Thug missed");
+      $(".message-box").prepend("Thug missed").prepend("<br />");
     }
 }
 
@@ -68,8 +65,8 @@ function bludgeon(hero) {
       this.health = 450;
       this.maxHealth = 450;
       this.image ="images/ruffian.jpg";
-    }
 
+    }
 
 Ruffian.prototype.getHealth = function () {
 return this.health ;
@@ -94,30 +91,30 @@ selectedHero.health = (selectedHero.health - (Math.floor(Math.random()*25) + 60)
 function knife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
-      console.log('Ruffian knifed you!');
+      $(".message-box").prepend('Ruffian knifed you!').prepend("<br />");
       selectedEnemy.knifeAttack();
     } else {
-      console.log("Ruffian missed");
+      $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
 }
 
 function pummel() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
-      console.log('Ruffian pummeled you!');
+      $(".message-box").prepend('Ruffian pummeled you!').prepend("<br />");
       selectedEnemy.pummelAttack();
     } else {
-      console.log("Ruffian missed");
+      $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
 }
 
 function cudgel() {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
-      console.log('Ruffian cudgeled you!');
+      $(".message-box").prepend('Ruffian cudgeled you!').prepend("<br />");
       selectedEnemy.cudgelAttack();
     } else {
-      console.log("Ruffian missed");
+      $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
 }
 
@@ -165,30 +162,30 @@ selectedHero.health = (selectedHero.health - (Math.floor(Math.random()*30) + 70)
 function pocketKnife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
-      console.log('Hoodlum pocketknifed you!');
+      $(".message-box").prepend('Hoodlum pocketknifed you!').prepend("<br />");
       selectedEnemy.pocketKnifeAttack();
     } else {
-      console.log("Hoodlum missed");
+      $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
 }
 
 function baton() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
-      console.log('Hoodlum hit you with a baton!');
+    $(".message-box").prepend('Hoodlum hit you with a baton!').prepend("<br />");
       selectedEnemy.batonAttack();
     } else {
-      console.log("Hoodlum missed");
+      $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
 }
 
 function shank() {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
-      console.log('Hoodlum shanked you!');
+      $(".message-box").prepend('Hoodlum shanked you!').prepend("<br />");
       selectedEnemy.shankAttack();
     } else {
-      console.log("Hoodlum missed");
+      $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
 }
 
