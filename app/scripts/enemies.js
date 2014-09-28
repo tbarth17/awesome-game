@@ -32,7 +32,7 @@ function beat() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
       console.log('Thug gave you a beatdown!');
-      selectedEnemy.beatAttack();
+      retaliatingEnemy.beatAttack();
     } else {
       console.log("Thug missed");
     }
@@ -42,7 +42,7 @@ function club() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
       console.log('Thug hit you with a club');
-      selectedEnemy.clubAttack();
+      retaliatingEnemy.clubAttack();
     } else {
       console.log("Thug missed");
     }
@@ -52,7 +52,7 @@ function bludgeon(hero) {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
       console.log('Thug gave you a bludgeoning!');
-      selectedEnemy.bludgeonAttack();
+      retaliatingEnemy.bludgeonAttack();
     } else {
       console.log("Thug missed");
     }
@@ -92,7 +92,7 @@ function knife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
       console.log('Ruffian knifed you!');
-      selectedEnemy.knifeAttack();
+      retaliatingEnemy.knifeAttack();
     } else {
       console.log("Ruffian missed");
     }
@@ -102,7 +102,7 @@ function pummel() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
       console.log('Ruffian pummeled you!');
-      selectedEnemy.pummelAttack();
+      retaliatingEnemy.pummelAttack();
     } else {
       console.log("Ruffian missed");
     }
@@ -112,7 +112,7 @@ function cudgel() {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
       console.log('Ruffian cudgeled you!');
-      selectedEnemy.cudgelAttack();
+      retaliatingEnemy.cudgelAttack();
     } else {
       console.log("Ruffian missed");
     }
@@ -163,7 +163,7 @@ function pocketKnife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
       console.log('Hoodlum pocketknifed you!');
-      selectedEnemy.pocketKnifeAttack();
+      retaliatingEnemy.pocketKnifeAttack();
     } else {
       console.log("Hoodlum missed");
     }
@@ -173,7 +173,7 @@ function baton() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
       console.log('Hoodlum hit you with a baton!');
-      selectedEnemy.batonAttack();
+      retaliatingEnemy.batonAttack();
     } else {
       console.log("Hoodlum missed");
     }
@@ -183,7 +183,7 @@ function shank() {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
       console.log('Hoodlum shanked you!');
-      selectedEnemy.shankAttack();
+      retaliatingEnemy.shankAttack();
     } else {
       console.log("Hoodlum missed");
     }

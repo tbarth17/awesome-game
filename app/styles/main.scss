@@ -45,6 +45,28 @@ h2 {
   padding: rem(10) 0;
 }
 
+////Win and lose box////
+
+.win {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
+
+.lose {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
+
 
 // ----------- Select Hero and Enemies ----------- //
 
@@ -251,8 +273,9 @@ h2 {
 }
 
 .lose {
+  margin-top: 80px;
   text-align: center;
-  @include span-columns(2);
+  @include span-columns(10);
 
   h1 {
     color: #000;

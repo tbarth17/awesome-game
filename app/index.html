@@ -38,7 +38,7 @@
              <select id="hero-drop">
               <option value="Batman">Batman</option>
               <option value="Yeti">Yeti</option>
-              <option value="Jackaloupe">Jackaloup</option>
+              <option value="Jackaloupe">Jackaloupe</option>
             </select>
             <button type="submit" class="hero-button">Submit</button>
 
@@ -62,8 +62,10 @@
 
       <div class="heros"><!-- Hero Character -->
 
+         <div id="lose" class="hidden">
+            <h1>You Lose!</h1>
+          </div>
         <div id="batman" class="hidden"><!-- Batman -->
-
           <h1>Batman</h1>
           <progress id="bat-health" value="1500" max="1500"></progress>
 
@@ -118,9 +120,7 @@
         <h2>You Win!</h2>
       </div>
 
-       <div id="lose" class="hidden">
-        <h2>You Lose!</h2>
-      </div>
+     
 
       <div class="enemies"><!-- Enemy Charactera -->
         <div id="enemy-one" class="hidden"></div>

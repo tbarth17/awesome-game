@@ -2,7 +2,7 @@
 
 function Batman() {
   this.name = "Batman";
-  this.health = 1000;
+  this.health = 750;
   this.maxHealth = 1000;
 }
 
@@ -60,7 +60,7 @@ function kick() {
 
 function Yeti() {
   this.name = "Yeti";
-  this.health = 1250;
+  this.health = 1000;
   this.maxHealth = 1250;
 }
 
@@ -118,7 +118,7 @@ function whallop() {
 
 function Jackaloupe() {
   this.name = "Jackaloupe";
-  this.health = 750;
+  this.health = 500;
   this.maxHealth = 750;
 }
 

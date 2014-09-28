@@ -16,6 +16,7 @@ var thug,
     enemy2,
     enemy3,
     selectedEnemy,
+    retaliatingEnemy,
     selectedHero;
 
 
@@ -261,11 +262,13 @@ function enemyHealth() {
   } else if (selectedEnemy === enemy1){
       (document.getElementById('enemy1-health').value = selectedEnemy.health);
   }
+
   if (enemy1.health <= 0 && enemy2.health <= 0 && enemy3.health <= 0) {
     $("#vs").addClass("hidden");
     $("#win").removeClass("hidden");
     $("#win").addClass("win");
   }
+
 }
 
 
@@ -274,7 +277,7 @@ function enemyHealth() {
 function batHealth() {
   var health = document.getElementById('bat-health').value = selectedHero.health;
   if (health <= 0 ) {
-    $("#vs").addClass("hidden");
+    $("#batman").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
@@ -287,20 +290,20 @@ $('.batarang').on('click', function() {
 
 
   setTimeout(function() {
-    selectedEnemy = enemy1;
+    retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       batHealth();
   }, 500);
 
 
   setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       batHealth();
   }, 1000);
 
   setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
 
@@ -334,19 +337,19 @@ $('.punch').on('click', function() {
 
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       batHealth();
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       batHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
     }, 1500);
@@ -372,19 +375,19 @@ $('.kick').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       batHealth();
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       batHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
     }, 1500);
@@ -411,7 +414,7 @@ $('.kick').on('click', function() {
 function yetiHealth() {
   var health = document.getElementById('yeti-health').value = selectedHero.health;
   if (health <= 0 ) {
-    $("#vs").addClass("hidden");
+    $("#yeti").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
@@ -422,20 +425,20 @@ $('.bash').on('click', function() {
   enemyHealth();
 
   setTimeout(function() {
-    selectedEnemy = enemy1;
+    retaliatingEnemy = enemy1;
     enemy1RandomRetaliation();
     yetiHealth();
 
   }, 500);
 
   setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       yetiHealth();
   }, 1000);
 
   setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
   }, 1500);
@@ -460,20 +463,20 @@ $('.smash').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       yetiHealth();
 
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       yetiHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
     }, 1500);
@@ -538,8 +541,8 @@ $('.whallop').on('click', function() {
 
 function jackHealth() {
   var health = document.getElementById('jack-health').value = selectedHero.health;
-   if (health <= 0 ) {
-    $("#vs").addClass("hidden");
+  if (health <= 0 ) {
+    $("#jackaloupe").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
