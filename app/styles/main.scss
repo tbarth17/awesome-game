@@ -2,7 +2,6 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-
 // ---------------- Variables ---------------- //
 
 $primary-font: "Helvetica", "Arial", "sans-serif";
@@ -18,6 +17,7 @@ body {
 
 .wrapper {
   @include outer-container;
+  padding-top: rem(40);
 }
 
 ul {
@@ -45,22 +45,14 @@ h2 {
   padding: rem(10) 0;
 }
 
-// ---------------- Header ---------------- //
 
-header {
-  text-align: center;
-  width: 100%;
-  @include linear-gradient(to top, #ff6d25, rgb(253, 150, 111));
-}
+// ----------- Select Hero and Enemies ----------- //
 
-
-// ---------------- Hero ---------------- //
+// Hero //
 
 .hero-container {
   @include span-columns(6);
   text-align: center;
-
-  outline: solid 1px red;
 
   ul {
     @include fill-parent();
@@ -72,11 +64,186 @@ header {
   }
 }
 
-// ---------------- Enemy ---------------- //
+// Enemy //
 
 .enemy-container {
   @include span-columns(6);
+  float: right;
   text-align: center;
+}
 
-  outline: solid 1px green;
+
+// ----------- Hero and Enemy Battle Arena ----------- //
+
+
+.battle-arena {
+  @include outer-container;
+
+  .hidden {
+    display: none;
+  }
+
+}
+
+.heros {
+  text-align: center;
+  @include span-columns(5);
+}
+
+.vs {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
+
+.enemies {
+  @include span-columns(5);
+}
+
+.enemy-selected {
+  outline: solid 3px orange;
+}
+
+// Hero Battle Characters //
+
+.batman {
+
+  h1 {
+    color: #fff;
+    padding: 0;
+  }
+
+  img {
+    width: 80%;
+    margin: rem(10) 0;
+  }
+
+  .actions {
+    margin: rem(20) 0;
+  }
+}
+
+.yeti {
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    margin: rem(10) 0;
+  }
+
+  .actions {
+    margin: rem(20) 0;
+  }
+}
+
+.jackaloupe {
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+
+  img {
+    width: 80%;
+    margin: rem(10) 0;
+  }
+
+  .actions {
+    margin: rem(20) 0;
+  }
+}
+
+
+// Hero Battle Characters //
+
+
+.thug {
+  border-bottom: $primary-border;
+
+  &:focus {
+    background-color: blue;
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  img {
+    display: inline-block;
+    width: 20%
+  }
+}
+
+.ruffian {
+  border-bottom: $primary-border;
+
+  &:focus {
+    background-color: yellow;
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  img {
+    display: inline-block;
+    width: 20%
+  }
+}
+
+.hoodlum {
+  border-bottom: $primary-border;
+
+  &:focus {
+    background-color: red;
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  img {
+    display: inline-block;
+    width: 20%
+  }
+}
+
+.enemy-info {
+  padding: rem(20) 0;
+  display: inline-block;
+}
+
+.bat-back {
+  background: url("http://static.comicvine.com/uploads/original/0/40/442952-s6_citywheel.jpg");
+}
+
+.yeti-back {
+  background: url("http://freedesignfile.com/upload/2012/12/201209234220.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.yeti-btn {
+  padding: 5px;
+  margin-right: 15px;
+  border: 1px solid #DEB887;
+  border-radius: 2px;
+  background: #FFF8DC;
+}
+
+progress::-webkit-progress-value {
+  background: green;
+}
+progress[value^="20"]::-webkit-progress-value,
+progress[value^="19"]::-webkit-progress-value,
+progress[value^="18"]::-webkit-progress-value{
+   background-color: red;
 }
