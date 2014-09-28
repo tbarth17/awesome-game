@@ -16,6 +16,7 @@ var thug,
     enemy2,
     enemy3,
     selectedEnemy,
+    retaliatingEnemy,
     selectedHero;
 
 
@@ -288,20 +289,20 @@ $('.batarang').on('click', function() {
 
 
   setTimeout(function() {
-    selectedEnemy = enemy1;
+    retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       batHealth();
   }, 500);
 
 
   setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       batHealth();
   }, 1000);
 
   setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
   }, 1500);
@@ -328,19 +329,19 @@ $('.punch').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       batHealth();
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       batHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
     }, 1500);
@@ -367,19 +368,19 @@ $('.kick').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       batHealth();
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       batHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
     }, 1500);
@@ -419,20 +420,20 @@ $('.bash').on('click', function() {
   enemyHealth();
 
   setTimeout(function() {
-    selectedEnemy = enemy1;
+    retaliatingEnemy = enemy1;
     enemy1RandomRetaliation();
     yetiHealth();
 
   }, 500);
 
   setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       yetiHealth();
   }, 1000);
 
   setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
   }, 1500);
@@ -457,20 +458,20 @@ $('.smash').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       yetiHealth();
 
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       yetiHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
     }, 1500);
