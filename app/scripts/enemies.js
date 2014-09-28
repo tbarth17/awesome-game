@@ -1,219 +1,11 @@
-// function Hero() {
-//   this.health = 200;
-// }
-
-// Hero.prototype.getHealth = function () {
-//   return this.health ;
-// };
-
-// /////////THUG////////
-
-//     function Thug() {
-//       this.name = 'Thug';
-//       this.health = 400;
-//     }
-
-// Thug.prototype.getHealth = function () {
-//   return this.health ;
-// };
-
-// Thug.prototype.getName = function () {
-//   return this.name;
-// };
-
-// Thug.prototype.beatAttack = function (hero) {
-//   hero.health = (hero.health - (Math.floor(Math.random()*15) + 30));
-// };
-
-// Thug.prototype.clubAttack = function(hero) {
-//   hero.health = (hero.health - (Math.floor(Math.random()*25) + 50));
-// };
-
-// Thug.prototype.bludgeonAttack = function(hero) {
-//   hero.health = (hero.health - (Math.floor(Math.random()*35) + 70));
-// };
-
-
-// function beat() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 3) {
-//       console.log('Thug gave you a beatdown!');
-//       selectedEnemy.beatAttack(hero);
-//     } else {
-//       console.log("Thug missed");
-//     }
-// };
-
-// function club() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 4) {
-//       console.log('Thug hit you with a club');
-//       selectedEnemy.clubAttack(hero);
-//     } else {
-//       console.log("Thug missed");
-//     }
-// };
-
-// function bludgeon(hero) {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 5) {
-//       console.log('Thug gave you a bludgeoning!');
-//       selectedEnemy.bludgeonAttack(hero);
-//     } else {
-//       console.log("Thug missed");
-//     }
-// };
-
-
-
-// /////////Ruffian////////
-
-//     function Ruffian() {
-//       this.name = 'Ruffian';
-//       this.health = 300;
-//     }
-
-// Ruffian.prototype.getHealth = function () {
-// return this.health ;
-// };
-
-// Ruffian.prototype.getName = function () {
-// return this.name;
-// };
-
-// Ruffian.prototype.knifeAttack = function (hero) {
-// hero.health = (hero.health - (Math.floor(Math.random()*15) + 25));
-// };
-
-// Ruffian.prototype.pummelAttack = function(hero) {
-// hero.health = (hero.health - (Math.floor(Math.random()*20) + 40));
-// };
-
-// Ruffian.prototype.cudgelAttack = function(hero) {
-// hero.health = (hero.health - (Math.floor(Math.random()*25) + 60));
-// };
-
-
-// function knife() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 3) {
-//       console.log('Ruffian knifed you!');
-//       selectedEnemy.knifeAttack(hero);
-//     } else {
-//       console.log("Ruffian missed");
-//     }
-// };
-
-// function pummel() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 4) {
-//       console.log('Ruffian pummeled you!');
-//       selectedEnemy.pummelAttack(hero);
-//     } else {
-//       console.log("Ruffian missed");
-//     }
-// };
-
-// function cudgel() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 5) {
-//       console.log('Ruffian cudgeled you!');
-//       selectedEnemy.cudgelAttack(hero);
-//     } else {
-//       console.log("Ruffian missed");
-//     }
-// };
-
-// function randomRuffianAttack(){
-//   var attack = Math.floor(Math.random()*10);
-//   if (attack <=5) {
-//     knife(selectedHero);
-//   } else if (8.5>= attack && attack > 5) {
-//     pummel(selectedHero);
-//   } else {
-//     cudgel(selectedHero);
-//   }
-
-// };
-
-
-
-// /////////Hoodlum////////
-
-// function Hoodlum() {
-//   this.name = 'Hoodlum';
-//   this.health = 200;
-// }
-
-// Hoodlum.prototype.getHealth = function () {
-// return this.health ;
-// };
-
-// Hoodlum.prototype.getName = function () {
-// return this.name;
-// };
-
-// Hoodlum.prototype.pocketKnifeAttack = function (hero) {
-// hero.health = (hero.health - (Math.floor(Math.random()*10) + 15));
-// };
-
-// Hoodlum.prototype.batonAttack = function(hero) {
-// hero.health = (hero.health - (Math.floor(Math.random()*20) + 25));
-// };
-
-// Hoodlum.prototype.shankAttack = function(hero) {
-// hero.health = (hero.health - (Math.floor(Math.random()*30) + 70));
-// };
-
-// function pocketKnife() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 3) {
-//       console.log('Hoodlum pocketknifed you!');
-//       selectedEnemy.pocketKnifeAttack(hero);
-//     } else {
-//       console.log("Hoodlum missed");
-//     }
-// };
-
-// function baton() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 4) {
-//       console.log('Hoodlum hit you with a baton!');
-//       selectedEnemy.batonAttack(hero);
-//     } else {
-//       console.log("Hoodlum missed");
-//     }
-// };
-
-// function shank() {
-//   hit = Math.floor(Math.random()*10);
-//   if (hit > 5) {
-//       console.log('Hoodlum shanked you!');
-//       selectedEnemy.shankAttack(hero);
-//     } else {
-//       console.log("Hoodlum missed");
-//     }
-// };
-
-// function randomHoodlumAttack(){
-//   var attack = Math.floor(Math.random()*10);
-//   if (attack <=5) {
-//     pocketKnife(selectedHero);
-//   } else if (8.5>= attack && attack > 5) {
-//     baton(selectedHero);
-//   } else {
-//     shank(selectedHero);
-//   }
-
-// };
-
-
-
 /////////THUG////////
 
     function Thug() {
       this.name = 'Thug';
       this.health = 550;
+      this.maxHealth = 550;
+      this.image = "images/thug.jpg";
+
     }
 
 Thug.prototype.getHealth = function () {
@@ -235,8 +27,6 @@ Thug.prototype.clubAttack = function() {
 Thug.prototype.bludgeonAttack = function() {
   selectedHero.health = (selectedHero.health - (Math.floor(Math.random()*35) + 70));
 };
-
-var thug = new Thug()
 
 function beat() {
   hit = Math.floor(Math.random()*10);
@@ -273,6 +63,9 @@ function bludgeon(hero) {
     function Ruffian() {
       this.name = 'Ruffian';
       this.health = 450;
+      this.maxHealth = 450;
+      this.image ="images/ruffian.jpg";
+
     }
 
 Ruffian.prototype.getHealth = function () {
@@ -342,6 +135,8 @@ function randomRuffianAttack(){
 function Hoodlum() {
   this.name = 'Hoodlum';
   this.health = 350;
+  this.maxHealth = 350;
+  this.image = "images/hoodlum.jpg";
 }
 
 Hoodlum.prototype.getHealth = function () {

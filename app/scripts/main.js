@@ -1,24 +1,25 @@
+function renderTemplate(templateID, container, model) {
+  var templateString = $('#' + templateID).text();
+  var templateFunction = _.template(templateString);
+  var renderedTemplate = templateFunction(model);
+  $(container).append(renderedTemplate);
+}
+
 var thug,
     hoodlum,
-    ruffian, 
+    ruffian,
     batman,
     yeti,
     jackaloupe,
     hit,
-    enemy1, 
-    enemy2, 
-    enemy3, 
+    enemy1,
+    enemy2,
+    enemy3,
     selectedEnemy,
     selectedHero;
 
 
 $(function() {
-  // thug = new Thug;
-  // hoodlum = new Hoodlum;
-  // ruffian = new Ruffian;
-  // batman = new Batman;
-  // jackaloupe = new Jackaloupe;
-  // yeti = new Yeti;
 });
 
 
@@ -76,6 +77,7 @@ $(".generate").on("click", function() {
     enemy1 = new Hoodlum();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("hoodlum");
+//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
 
   } else if (8.5>= hit1 && hit1 > 5) {
@@ -83,12 +85,14 @@ $(".generate").on("click", function() {
     enemy1 = new Ruffian();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("ruffian");
+//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
   } else {
 
     enemy1 = new Thug();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("thug");
+//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
   }
 
@@ -98,18 +102,21 @@ $(".generate").on("click", function() {
     enemy2 = new Hoodlum();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("hoodlum");
+//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   } else if (8.5>= hit2 && hit2 > 5) {
 
     enemy2 = new Ruffian();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("ruffian");
+//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   } else {
 
     enemy2 = new Thug();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("thug");
+//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   }
 
@@ -119,23 +126,32 @@ $(".generate").on("click", function() {
     enemy3 = new Hoodlum();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("hoodlum");
+//    renderTemplate("#enemies-template", "#enemy-three", enemy3);
 
   } else if (8.5>= hit3 && hit3 > 5) {
 
     enemy3 = new Ruffian();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("ruffian");
+//    renderTemplate("enemies-template", "#enemy-three", enemy3);
 
   } else {
 
     enemy3 = new Thug();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("thug");
+//    renderTemplate("enemies-template", "#enemy-three", enemy3);
 
   }
+setTimeout(function() {
+  renderTemplate("enemies-template1", "#enemy-one", enemy1);
+  renderTemplate("enemies-template2", "#enemy-two", enemy2);
+  renderTemplate("enemies-template3", "#enemy-three", enemy3);
+
+}, 500);
+
 
 });
-
 
 // Selecting Enemies //
 
@@ -200,7 +216,9 @@ function randomHoodlumAttack(hero){
 }
 
 function enemy1RandomRetaliation() {
-  if (enemy1 instanceof Thug) {
+  if (enemy1.health <= 0) {
+    console.log(enemy1.name + ' is dead!')
+  } else if (enemy1 instanceof Thug) {
     randomThugAttack();
   } else if (enemy1 instanceof Ruffian){
     randomRuffianAttack();
@@ -210,7 +228,9 @@ function enemy1RandomRetaliation() {
 }
 
 function enemy2RandomRetaliation() {
-  if (enemy2 instanceof Thug) {
+  if (enemy2.health <= 0) {
+    console.log(enemy2.name + ' is dead!')
+  } else if (enemy2 instanceof Thug) {
     randomThugAttack();
   } else if (enemy2 instanceof Ruffian){
     randomRuffianAttack();
@@ -220,7 +240,9 @@ function enemy2RandomRetaliation() {
 }
 
 function enemy3RandomRetaliation() {
-  if (enemy3 instanceof Thug) {
+  if (enemy3.health <= 0) {
+    console.log(enemy3.name + ' is dead!')
+  } else if (enemy3 instanceof Thug) {
     randomThugAttack();
   } else if (enemy3 instanceof Ruffian){
     randomRuffianAttack();
@@ -258,36 +280,44 @@ function batHealth() {
   }
 }
 
-$('.batarang').on('click', function() { 
+$('.batarang').on('click', function() {
   batarang(selectedEnemy);
-  enemyHealth()
- 
- // enemy2Health()
- // enemy3Health()
-  // console.log(batman.getHealth());
- 
-  // console.log(thug.getHealth());
-  // console.log(stop(thug));
-  //  console.log(selectedEnemy.name + ': ' +  selectedEnemy.getHealth());
-  //   console.log('Batman: ' + batman.getHealth());  
-  // console.log(selectedEnemy.name + ': ' +  selectedEnemy.getHealth());
+  enemyHealth();
 
+
+<<<<<<< HEAD
   setTimeout(function() {   
+=======
+  setTimeout(function() {
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
     selectedEnemy = enemy1;
       enemy1RandomRetaliation();
+      batHealth();
+  }, 500);
 
+
+  setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      batHealth();
+  }, 1000);
 
+  setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
+<<<<<<< HEAD
     // console.log('Thug attacks back');
     // console.log('Batman: ' + batman.getHealth());
     // console.log('Thug: ' + thug.getHealth());
     // club(batman);
     // console.log('Batman: ' + batman.getHealth());
   }, 500);
+=======
+  }, 1500);
+
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -304,22 +334,40 @@ $('.batarang').on('click', function() {
 });
 
 
-$('.punch').on('click', function() { 
+$('.punch').on('click', function() {
   punch(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() { 
     selectedEnemy = enemy1;
+=======
+    setTimeout(function() {
+      selectedEnemy = enemy1;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
       enemy1RandomRetaliation();
+      batHealth();
+    }, 500);
 
+    setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      batHealth();
+    }, 1000);
 
+    setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
+<<<<<<< HEAD
   
   }, 500);
+=======
+    }, 1500);
+
+
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -335,22 +383,41 @@ $('.punch').on('click', function() {
     }
 });
 
-$('.kick').on('click', function() { 
+$('.kick').on('click', function() {
   kick(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() {   
     selectedEnemy = enemy1;
+=======
+    setTimeout(function() {
+      selectedEnemy = enemy1;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
       enemy1RandomRetaliation();
+      batHealth();
+    }, 500);
 
+    setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      batHealth();
+    }, 1000);
 
+    setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
+<<<<<<< HEAD
   
   }, 500);
+=======
+    }, 1500);
+
+
+
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -370,30 +437,46 @@ $('.kick').on('click', function() {
 /// Yeti ///
 
 function yetiHealth() {
+<<<<<<< HEAD
   var health = document.getElementById('yeti-health').value = selectedHero.health;
   if (health <= 0 ) {
     $("#vs").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
+=======
+    document.getElementById('yeti-health').value = selectedHero.health;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
 }
 
-$('.bash').on('click', function() { 
+$('.bash').on('click', function() {
   bash(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
   setTimeout(function() {
     selectedEnemy = enemy1;
-      enemy1RandomRetaliation();
+    enemy1RandomRetaliation();
+    yetiHealth();
 
+  }, 500);
+
+  setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      yetiHealth();
+  }, 1000);
 
+  setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
+<<<<<<< HEAD
   
   }, 500);
+=======
+  }, 1500);
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -409,22 +492,39 @@ $('.bash').on('click', function() {
     }
 });
 
-$('.smash').on('click', function() { 
+$('.smash').on('click', function() {
   smash(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() {
     selectedEnemy = enemy1;
+=======
+    setTimeout(function() {
+      selectedEnemy = enemy1;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
       enemy1RandomRetaliation();
+      yetiHealth();
 
+    }, 500);
+
+    setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      yetiHealth();
+    }, 1000);
 
+    setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
+<<<<<<< HEAD
 
   }, 500);
+=======
+    }, 1500);
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -440,22 +540,39 @@ $('.smash').on('click', function() {
     }
 });
 
-$('.whallop').on('click', function() { 
+$('.whallop').on('click', function() {
   whallop(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() {
     selectedEnemy = enemy1;
+=======
+    setTimeout(function() {
+      selectedEnemy = enemy1;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
       enemy1RandomRetaliation();
+      yetiHealth();
 
+    }, 500);
+
+    setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      yetiHealth();
+    }, 1000);
 
+    setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
+<<<<<<< HEAD
   
   }, 500);
+=======
+    }, 1500);
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -485,22 +602,42 @@ function jackHealth() {
   }
 }
 
-$('.stab').on('click', function() { 
+$('.stab').on('click', function() {
   stab(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() {  
+=======
+  setTimeout(function() {
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
     selectedEnemy = enemy1;
-      enemy1RandomRetaliation();
+    enemy1RandomRetaliation();
+    jackHealth();
 
-      selectedEnemy = enemy2;
-      enemy2RandomRetaliation();
 
+<<<<<<< HEAD
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       jackHealth();
   
+=======
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
   }, 500);
+
+  setTimeout(function() {
+    selectedEnemy = enemy2;
+    enemy2RandomRetaliation();
+    jackHealth();
+  }, 1000);
+
+  setTimeout(function() {
+    selectedEnemy = enemy3;
+    enemy3RandomRetaliation();
+    jackHealth();
+  }, 1500);
+
+
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -516,22 +653,39 @@ $('.stab').on('click', function() {
     }
 });
 
-$('.maul').on('click', function() { 
+$('.maul').on('click', function() {
   maul(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() {
     selectedEnemy = enemy1;
+=======
+    setTimeout(function() {
+      selectedEnemy = enemy1;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
       enemy1RandomRetaliation();
+      jackHealth();
+    }, 500);
 
+    setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      jackHealth();
+    }, 1000);
 
+    setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       jackHealth();
+<<<<<<< HEAD
   
   }, 500);
+=======
+    }, 1500);
+
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -547,22 +701,38 @@ $('.maul').on('click', function() {
     }
 });
 
-$('.flyingRabbitKick').on('click', function() { 
+$('.flyingRabbitKick').on('click', function() {
   flyingRabbitKick(selectedEnemy);
-  enemyHealth()
+  enemyHealth();
 
+<<<<<<< HEAD
   setTimeout(function() {
     selectedEnemy = enemy1;
+=======
+    setTimeout(function() {
+      selectedEnemy = enemy1;
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
       enemy1RandomRetaliation();
+      jackHealth();
+    }, 500);
 
+    setTimeout(function() {
       selectedEnemy = enemy2;
       enemy2RandomRetaliation();
+      jackHealth();
+    }, 1000);
 
+    setTimeout(function() {
       selectedEnemy = enemy3;
       enemy3RandomRetaliation();
       jackHealth();
+<<<<<<< HEAD
   
   }, 500);
+=======
+    }, 1500);
+
+>>>>>>> 7b89be778ffe0e89f8cc19c973e3abf1b96b914b
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -577,8 +747,3 @@ $('.flyingRabbitKick').on('click', function() {
 
     }
 });
-
-
-
-
-

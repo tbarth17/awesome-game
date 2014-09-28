@@ -22,7 +22,6 @@
     <!-- endbuild -->
   </head>
   <body>
-     <header><h1>Welcome the Coliseum</h1></header>
 
     <div id="select-container" class="wrapper">
 
@@ -48,7 +47,7 @@
       </div><!-- End of Hero Container -->
 
 
-      <form id= "enemy-con" class="enemy-container"><!-- Enemy Container -->
+      <form id="enemy-con" class="enemy-container"><!-- Enemy Container -->
         <button class="generate">Choose your Enemies</button>
       </form><!-- End of Enemy Container -->
 
@@ -124,55 +123,40 @@
       </div>
 
       <div class="enemies"><!-- Enemy Charactera -->
-<!--       <script type="text/template" id="enemies-template">
- -->
-        <div id="enemy-one" class="hidden"><!-- Enemy One -->
+        <div id="enemy-one" class="hidden"></div>
+        <div id="enemy-two" class="hidden"></div>
+        <div id="enemy-three" class="hidden"></div>
+       <script type="text/template" id="enemies-template1">
 
-          <h1>Enemy 1</h1>
-          <progress id="enemy1-health" value="300" max="300"></progress>
+          <!-- Enemy One -->
+          <img src="<%= enemy1.image %>" />
+          <div class="enemy-info">
+            <h1><%= enemy1.name %></h1>
+            <progress id="enemy1-health" value="<%= enemy1.health %>" max="<%= enemy1.maxHealth %>"></progress>
+          </div>
+      </script>
 
-        </div>
+      <script type="text/template" id="enemies-template2">
+          <!-- Enemy Two -->
+          <img src="<%= enemy2.image %>" />
+          <div class="enemy-info">
+            <h1><%= enemy2.name %></h1>
+            <progress id="enemy2-health" value="<%= enemy2.health %>" max="<%= enemy2.maxHealth %>"></progress>
+          </div>
+      </script>
 
-        <div id="enemy-two" class="hidden">
+      <script type="text/template" id="enemies-template3">
+          <!-- Enemy Three -->
+          <img src="<%= enemy3.image %>" />
+          <div class="enemy-info">
+            <h1><%= enemy3.name %></h1>
+            <progress id="enemy3-health" value="<%= enemy3.health %>" max="<%= enemy3.maxHealth %>"></progress>
+          </div>
+        </script>
 
-          <h1>Enemy 2</h1>
-          <progress id="enemy2-health" value="500" max="500"></progress>
+       </div><!-- End of Enemy Charactera -->
 
-        </div>
-
-        <div id="enemy-three" class="hidden">
-
-          <h1>Enemy 3</h1>
-          <progress id="enemy3-health" value="100" max="100"></progress>
-
-        </div>
-
-<!--       </script>
- -->      </div><!-- End of Enemy Charactera -->
-      
     </div>
-
-
-   <!--  <progress id="bat-health" value="1500" max="1500"></progress>
-    <button class='punch'>Punch!</button>
-    <button class='batarang'>Batarang!</button>
-    <button class='kick' >Kick!</button>
-    <progress id="health" value="400" max="400"></progress>
-     <progress id="hood-health" value="300" max="300"></progress>
-      <progress id="ruff-health" value="200" max="200"></progress>
-
-    <div class="right"></div>
-    <div class="mid"></div>
-     <button class='generate'>Generate!</button>
-      <div><span>Enemies</span>
-      <button class='enemy1'>Enemy 1</button>
-      <button class='enemy2'>Enemy 2</button>
-      <button class='enemy3'>Enemy 3</button>
-    </div>
-<script type="text/template">
-  
-</script>
- -->
 
 
     <!-- build:js scripts/vendor.js -->
