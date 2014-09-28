@@ -2,25 +2,238 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-// Custom Styles
+// ---------------- Variables ---------------- //
+
+$primary-font: "Helvetica", "Arial", "sans-serif";
+$primary-border: solid 1px #eee;
+
+// ---------------- Generic ---------------- //
+
+// Styles that apply to multiple or non-specific sections //
+
 body {
   background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.wrapper {
+  @include outer-container;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+h1 {
+  font-family: $primary-font;
+  font-size: rem(60);
+  font-weight: Bold;
+  color: #f2f2f2;
+
+  margin: 0;
+  padding: rem(30) 0;
+}
+
+h2 {
+  color: #777;
+  font-family: $primary-font;
+  font-size: rem(24);
+  font-weight: Bold;
+
+  margin: 0;
+  padding: rem(10) 0;
+}
+
+// ----------- Header ----------- //
+
+header {
+  text-align: center;
+  width: 100%;
+  @include linear-gradient(to top, #ff6d25, rgb(253, 150, 111));
+}
+
+
+// ----------- Select Hero and Enemies ----------- //
+
+// Hero //
+
+.hero-container {
+  @include span-columns(6);
+  text-align: center;
+
+  ul {
+    @include fill-parent();
+    border: $primary-border;
+
+    li {
+      border-bottom: $primary-border;
+    }
   }
 }
+
+// Enemy //
+
+.enemy-container {
+  @include span-columns(6);
+  float: right;
+  text-align: center;
+}
+
+
+// ----------- Hero and Enemy Battle Arena ----------- //
+
+
+.battle-arena {
+  @include outer-container;
+
+  .hidden {
+    display: none;
+  }
+
+}
+
+.heros {
+  text-align: center;
+  @include span-columns(5);
+}
+
+.vs {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
+
+.enemies {
+  @include span-columns(5);
+}
+
+.enemy-selected {
+  outline: solid 3px orange;
+}
+
+// Hero Battle Characters //
+
+.batman {
+
+  h1 {
+    color: #fff;
+    padding: 0;
+  }
+
+  img {
+    width: 80%;
+    margin: rem(10) 0;
+  }
+
+  .actions {
+    margin: rem(20) 0;
+  }
+}
+
+.yeti {
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    margin: rem(10) 0;
+  }
+
+  .actions {
+    margin: rem(20) 0;
+  }
+}
+
+.jackaloupe {
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+
+  img {
+    width: 80%;
+    margin: rem(10) 0;
+  }
+
+  .actions {
+    margin: rem(20) 0;
+  }
+}
+
+
+// Hero Battle Characters //
+
+
+.thug {
+  background-color: red;
+  border-bottom: $primary-border;
+
+  &:focus {
+    background-color: blue;
+  }
+
+  h1 {
+    padding: 0;
+  }
+}
+
+.ruffian {
+  background-color: green;
+  border-bottom: $primary-border;
+
+  &:focus {
+    background-color: yellow;
+  }
+
+  h1 {
+    padding: 0;
+  }
+}
+
+.hoodlum {
+  background-color: yellow;
+  border-bottom: $primary-border;
+
+  &:focus {
+    background-color: red;
+  }
+
+  h1 {
+    padding: 0;
+  }
+}
+
+.bat-back {
+  background: url("http://static.comicvine.com/uploads/original/0/40/442952-s6_citywheel.jpg");
+}
+
+.yeti-back {
+  background: url("http://freedesignfile.com/upload/2012/12/201209234220.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.yeti-btn {
+  padding: 5px;
+  margin-right: 15px;
+  border: 1px solid #DEB887;
+  border-radius: 2px;
+  background: #FFF8DC;
+}
+
+progress::-webkit-progress-value {
+  background: green;
+}
+progress[value^="20"]::-webkit-progress-value,
+progress[value^="19"]::-webkit-progress-value,
+progress[value^="18"]::-webkit-progress-value{
+   background-color: red;
+} 

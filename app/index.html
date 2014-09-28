@@ -22,28 +22,150 @@
     <!-- endbuild -->
   </head>
   <body>
+     <header><h1>Welcome the Coliseum</h1></header>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-
-        <li>Sass</li>
+    <div id="select-container" class="wrapper">
 
 
-        <li>Modernizr</li>
+      <!-- Hero and Enemy Selectors -->
 
 
-        <li>Bourbon & Neat</li>
+      <div id="hero-con" class="hero-container"><!-- Hero Container -->
+
+        <!-- Dropdown Menu for Hero Character -->
+          <form>
+
+            <label for="hero-drop">Choose Your Hero:</label>
+             <select id="hero-drop">
+              <option value="Batman">Batman</option>
+              <option value="Yeti">Yeti</option>
+              <option value="Jackaloupe">Jackaloup</option>
+            </select>
+            <button type="submit" class="hero-button">Submit</button>
+
+          </form>
+
+      </div><!-- End of Hero Container -->
 
 
-        <li>UnderscoreJS</li>
+      <form id= "enemy-con" class="enemy-container"><!-- Enemy Container -->
+        <button class="generate">Choose your Enemies</button>
+      </form><!-- End of Enemy Container -->
 
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+
+      <!-- End Hero and Enemy Selectors -->
+    </div><!-- End of Wrapper -->
+
+
+    <!-- Battle Arena -->
+
+    <div class="battle-arena">
+
+      <div class="heros"><!-- Hero Character -->
+
+        <div id="batman" class="hidden"><!-- Batman -->
+
+          <h1>Batman</h1>
+          <progress id="bat-health" value="1500" max="1500"></progress>
+
+          <img src="images/Batman_Arkham_Knight.png" />
+
+          <div class="actions">
+            <button class="punch">Punch!</button>
+            <button class="batarang">Batarang!</button>
+            <button class="kick">Kick!</button>
+          </div>
+
+        </div><!-- End of Batman -->
+
+        <div id="yeti" class="hidden"><!-- Yeti -->
+
+          <h1>Yeti</h1>
+          <progress id="yeti-health" value="1500" max="1500"></progress>
+
+          <img src="images/SnowYeti.png" />
+
+          <div class="actions">
+            <button class="bash yeti-btn">Bash!</button>
+            <button class="smash yeti-btn">Smash!</button>
+            <button class="whallop yeti-btn">Whallop!</button>
+          </div>
+
+        </div><!-- End of Yeti -->
+
+
+        <div id="jackaloupe" class="hidden"><!-- Jackaloupe -->
+
+          <h1>Jackaloupe</h1>
+          <progress id="jack-health" value="1500" max="1500"></progress>
+
+          <img src="images/Jackalope.jpg" />
+
+          <div class="actions">
+            <button class="stab ">Stab!</button>
+            <button class="maul ">Maul!</button>
+            <button class="flyingRabbitKick ">Flying Rabbit Kick!</button>
+          </div>
+
+        </div><!-- End of Jackaloupe -->
+
+      </div><!-- End Hero Character -->
+
+      <div id="vs" class="hidden">
+        <h1>VS</h1>
+      </div>
+
+      <div class="enemies"><!-- Enemy Charactera -->
+<!--       <script type="text/template" id="enemies-template">
+ -->
+        <div id="enemy-one" class="hidden"><!-- Enemy One -->
+
+          <h1>Enemy 1</h1>
+          <progress id="enemy1-health" value="300" max="300"></progress>
+
+        </div>
+
+        <div id="enemy-two" class="hidden">
+
+          <h1>Enemy 2</h1>
+          <progress id="enemy2-health" value="500" max="500"></progress>
+
+        </div>
+
+        <div id="enemy-three" class="hidden">
+
+          <h1>Enemy 3</h1>
+          <progress id="enemy3-health" value="100" max="100"></progress>
+
+        </div>
+
+<!--       </script>
+ -->      </div><!-- End of Enemy Charactera -->
+      
     </div>
+
+
+   <!--  <progress id="bat-health" value="1500" max="1500"></progress>
+    <button class='punch'>Punch!</button>
+    <button class='batarang'>Batarang!</button>
+    <button class='kick' >Kick!</button>
+    <progress id="health" value="400" max="400"></progress>
+     <progress id="hood-health" value="300" max="300"></progress>
+      <progress id="ruff-health" value="200" max="200"></progress>
+
+    <div class="right"></div>
+    <div class="mid"></div>
+     <button class='generate'>Generate!</button>
+      <div><span>Enemies</span>
+      <button class='enemy1'>Enemy 1</button>
+      <button class='enemy2'>Enemy 2</button>
+      <button class='enemy3'>Enemy 3</button>
+    </div>
+<script type="text/template">
+  
+</script>
+ -->
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
