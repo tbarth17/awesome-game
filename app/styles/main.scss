@@ -17,6 +17,7 @@ body {
 
 .wrapper {
   @include outer-container;
+  padding-top: rem(40);
 }
 
 ul {
@@ -42,14 +43,6 @@ h2 {
 
   margin: 0;
   padding: rem(10) 0;
-}
-
-// ----------- Header ----------- //
-
-header {
-  text-align: center;
-  width: 100%;
-  @include linear-gradient(to top, #ff6d25, rgb(253, 150, 111));
 }
 
 
@@ -173,7 +166,6 @@ header {
 
 
 .thug {
-  background-color: red;
   border-bottom: $primary-border;
 
   &:focus {
@@ -183,10 +175,14 @@ header {
   h1 {
     padding: 0;
   }
+
+  img {
+    display: inline-block;
+    width: 20%
+  }
 }
 
 .ruffian {
-  background-color: green;
   border-bottom: $primary-border;
 
   &:focus {
@@ -196,10 +192,14 @@ header {
   h1 {
     padding: 0;
   }
+
+  img {
+    display: inline-block;
+    width: 20%
+  }
 }
 
 .hoodlum {
-  background-color: yellow;
   border-bottom: $primary-border;
 
   &:focus {
@@ -209,6 +209,16 @@ header {
   h1 {
     padding: 0;
   }
+
+  img {
+    display: inline-block;
+    width: 20%
+  }
+}
+
+.enemy-info {
+  padding: rem(20) 0;
+  display: inline-block;
 }
 
 .bat-back {
@@ -236,4 +246,4 @@ progress[value^="20"]::-webkit-progress-value,
 progress[value^="19"]::-webkit-progress-value,
 progress[value^="18"]::-webkit-progress-value{
    background-color: red;
-} 
+}
