@@ -267,6 +267,7 @@ function enemyHealth() {
     $("#vs").addClass("hidden");
     $("#win").removeClass("hidden");
     $("#win").addClass("win");
+    $('enemies').addClass('hidden');
   }
 
 }
@@ -496,20 +497,20 @@ $('.whallop').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       yetiHealth();
 
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       yetiHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       yetiHealth();
     }, 1500);
@@ -548,7 +549,7 @@ $('.stab').on('click', function() {
   enemyHealth();
 
   setTimeout(function() {
-    selectedEnemy = enemy1;
+    retaliatingEnemy = enemy1;
     enemy1RandomRetaliation();
     jackHealth();
 
@@ -556,13 +557,13 @@ $('.stab').on('click', function() {
   }, 500);
 
   setTimeout(function() {
-    selectedEnemy = enemy2;
+    retaliatingEnemy = enemy2;
     enemy2RandomRetaliation();
     jackHealth();
   }, 1000);
 
   setTimeout(function() {
-    selectedEnemy = enemy3;
+    retaliatingEnemy = enemy3;
     enemy3RandomRetaliation();
     jackHealth();
   }, 1500);
@@ -588,19 +589,19 @@ $('.maul').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       jackHealth();
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       jackHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       jackHealth();
     }, 1500);
@@ -626,19 +627,19 @@ $('.flyingRabbitKick').on('click', function() {
   enemyHealth();
 
     setTimeout(function() {
-      selectedEnemy = enemy1;
+      retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
       jackHealth();
     }, 500);
 
     setTimeout(function() {
-      selectedEnemy = enemy2;
+      retaliatingEnemy = enemy2;
       enemy2RandomRetaliation();
       jackHealth();
     }, 1000);
 
     setTimeout(function() {
-      selectedEnemy = enemy3;
+      retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       jackHealth();
     }, 1500);
