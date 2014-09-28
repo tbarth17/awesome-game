@@ -263,11 +263,13 @@ h2 {
 
 
 .win {
-  text-align: center;
-  @include span-columns(2);
+  margin-top: -600px;
+  margin-left: 50px;
+  text-align: right;
+  @include span-columns(10);
 
   h1 {
-    color: #000;
+    color: #556B2F;
     padding: 0;
   }
 }
@@ -278,7 +280,7 @@ h2 {
   @include span-columns(10);
 
   h1 {
-    color: #000;
+    color: #8B0000;
     padding: 0;
   }
 }

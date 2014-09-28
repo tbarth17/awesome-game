@@ -264,10 +264,9 @@ function enemyHealth() {
   }
 
   if (enemy1.health <= 0 && enemy2.health <= 0 && enemy3.health <= 0) {
-    $("#vs").addClass("hidden");
+    $(".enemies").addClass("hidden");
     $("#win").removeClass("hidden");
     $("#win").addClass("win");
-    $('enemies').addClass('hidden');
   }
 
 }
