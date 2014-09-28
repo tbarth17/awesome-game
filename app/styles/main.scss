@@ -229,11 +229,23 @@ header {
   background: #FFF8DC;
 }
 
-progress::-webkit-progress-value {
-  background: green;
+.win {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
 }
-progress[value^="20"]::-webkit-progress-value,
-progress[value^="19"]::-webkit-progress-value,
-progress[value^="18"]::-webkit-progress-value{
-   background-color: red;
-} 
+
+.lose {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
+
