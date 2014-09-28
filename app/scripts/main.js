@@ -264,10 +264,9 @@ function enemyHealth() {
   }
 
   if (enemy1.health <= 0 && enemy2.health <= 0 && enemy3.health <= 0) {
-    $("#vs").addClass("hidden");
+    $(".enemies").addClass("hidden");
     $("#win").removeClass("hidden");
     $("#win").addClass("win");
-    $('enemies').addClass('hidden');
   }
 
 }
@@ -278,7 +277,7 @@ function enemyHealth() {
 function batHealth() {
   var health = document.getElementById('bat-health').value = selectedHero.health;
   if (health <= 0 ) {
-    $("#vs").addClass("hidden");
+    $("#batman").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
@@ -287,6 +286,7 @@ function batHealth() {
 $('.batarang').on('click', function() {
   batarang(selectedEnemy);
   enemyHealth();
+
 
 
   setTimeout(function() {
@@ -306,6 +306,12 @@ $('.batarang').on('click', function() {
       retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
+
+    // console.log('Thug attacks back');
+    // console.log('Batman: ' + batman.getHealth());
+    // console.log('Thug: ' + thug.getHealth());
+    // club(batman);
+    // console.log('Batman: ' + batman.getHealth());
   }, 1500);
 
 
@@ -329,6 +335,7 @@ $('.punch').on('click', function() {
   punch(selectedEnemy);
   enemyHealth();
 
+
     setTimeout(function() {
       retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
@@ -346,7 +353,6 @@ $('.punch').on('click', function() {
       enemy3RandomRetaliation();
       batHealth();
     }, 1500);
-
 
 
    if (selectedEnemy === enemy1) {
@@ -387,8 +393,6 @@ $('.kick').on('click', function() {
     }, 1500);
 
 
-
-
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -408,9 +412,9 @@ $('.kick').on('click', function() {
 /// Yeti ///
 
 function yetiHealth() {
-    var health = document.getElementById('yeti-health').value = selectedHero.health;
-    if (health <= 0 ) {
-    $("#vs").addClass("hidden");
+  var health = document.getElementById('yeti-health').value = selectedHero.health;
+  if (health <= 0 ) {
+    $("#yeti").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
@@ -512,7 +516,7 @@ $('.whallop').on('click', function() {
     setTimeout(function() {
       retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
-      yetiHealth();
+      yetiHealth();  
     }, 1500);
 
    if (selectedEnemy === enemy1) {
@@ -538,7 +542,7 @@ $('.whallop').on('click', function() {
 function jackHealth() {
   var health = document.getElementById('jack-health').value = selectedHero.health;
   if (health <= 0 ) {
-    $("#vs").addClass("hidden");
+    $("#jackaloupe").addClass("hidden");
     $("#lose").removeClass("hidden");
     $("#lose").addClass("lose");
   }
@@ -552,8 +556,6 @@ $('.stab').on('click', function() {
     retaliatingEnemy = enemy1;
     enemy1RandomRetaliation();
     jackHealth();
-
-
   }, 500);
 
   setTimeout(function() {
@@ -606,7 +608,6 @@ $('.maul').on('click', function() {
       jackHealth();
     }, 1500);
 
-
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -625,6 +626,7 @@ $('.maul').on('click', function() {
 $('.flyingRabbitKick').on('click', function() {
   flyingRabbitKick(selectedEnemy);
   enemyHealth();
+
 
     setTimeout(function() {
       retaliatingEnemy = enemy1;

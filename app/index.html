@@ -47,7 +47,7 @@
       </div><!-- End of Hero Container -->
 
 
-      <form id= "enemy-con" class="enemy-container"><!-- Enemy Container -->
+      <form id="enemy-con" class="enemy-container"><!-- Enemy Container -->
         <button class="generate">Choose your Enemies</button>
       </form><!-- End of Enemy Container -->
 
@@ -62,8 +62,10 @@
 
       <div class="heros"><!-- Hero Character -->
 
+         <div id="lose" class="hidden">
+            <h1>You Lose!</h1>
+          </div>
         <div id="batman" class="hidden"><!-- Batman -->
-
           <h1>Batman</h1>
           <progress id="bat-health" value="1500" max="1500"></progress>
 
@@ -113,21 +115,15 @@
       <div id="vs" class="hidden">
         <h1>VS</h1>
       </div>
-
-      <div id="win" class="hidden">
-        <h2>You Win!</h2>
-      </div>
-
-      <div id="lose" class="hidden">
-        <h2>You Lose!</h2>
-      </div>
-
+      <div id="win" class="win hidden" >
+            <h1>You Win!</h1>
+        </div>
       <div class="enemies"><!-- Enemy Charactera -->
         <div id="enemy-one" class="hidden"></div>
         <div id="enemy-two" class="hidden"></div>
         <div id="enemy-three" class="hidden"></div>
-       <script type="text/template" id="enemies-template1">
 
+       <script type="text/template" id="enemies-template1">
           <!-- Enemy One -->
           <img src="<%= enemy1.image %>" />
           <div class="enemy-info">
