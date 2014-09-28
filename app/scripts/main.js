@@ -1,3 +1,10 @@
+function renderTemplate(templateID, container, model) {
+  var templateString = $('#' + templateID).text();
+  var templateFunction = _.template(templateString);
+  var renderedTemplate = templateFunction(model);
+  $(container).append(renderedTemplate);
+}
+
 var thug,
     hoodlum,
     ruffian,
@@ -70,6 +77,7 @@ $(".generate").on("click", function() {
     enemy1 = new Hoodlum();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("hoodlum");
+//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
 
   } else if (8.5>= hit1 && hit1 > 5) {
@@ -77,12 +85,14 @@ $(".generate").on("click", function() {
     enemy1 = new Ruffian();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("ruffian");
+//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
   } else {
 
     enemy1 = new Thug();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("thug");
+//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
   }
 
@@ -92,18 +102,21 @@ $(".generate").on("click", function() {
     enemy2 = new Hoodlum();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("hoodlum");
+//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   } else if (8.5>= hit2 && hit2 > 5) {
 
     enemy2 = new Ruffian();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("ruffian");
+//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   } else {
 
     enemy2 = new Thug();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("thug");
+//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   }
 
@@ -113,23 +126,32 @@ $(".generate").on("click", function() {
     enemy3 = new Hoodlum();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("hoodlum");
+//    renderTemplate("#enemies-template", "#enemy-three", enemy3);
 
   } else if (8.5>= hit3 && hit3 > 5) {
 
     enemy3 = new Ruffian();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("ruffian");
+//    renderTemplate("enemies-template", "#enemy-three", enemy3);
 
   } else {
 
     enemy3 = new Thug();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("thug");
+//    renderTemplate("enemies-template", "#enemy-three", enemy3);
 
   }
+setTimeout(function() {
+  renderTemplate("enemies-template1", "#enemy-one", enemy1);
+  renderTemplate("enemies-template2", "#enemy-two", enemy2);
+  renderTemplate("enemies-template3", "#enemy-three", enemy3);
+
+}, 500);
+
 
 });
-
 
 // Selecting Enemies //
 

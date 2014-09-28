@@ -4,6 +4,8 @@
       this.name = 'Thug';
       this.health = 550;
       this.maxHealth = 550;
+      this.image = "images/thug.jpg";
+
     }
 
 Thug.prototype.getHealth = function () {
@@ -62,6 +64,8 @@ function bludgeon(hero) {
       this.name = 'Ruffian';
       this.health = 450;
       this.maxHealth = 450;
+      this.image ="images/ruffian.jpg";
+
     }
 
 Ruffian.prototype.getHealth = function () {
@@ -132,6 +136,7 @@ function Hoodlum() {
   this.name = 'Hoodlum';
   this.health = 350;
   this.maxHealth = 350;
+  this.image = "images/hoodlum.jpg";
 }
 
 Hoodlum.prototype.getHealth = function () {
