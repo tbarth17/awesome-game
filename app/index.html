@@ -47,7 +47,7 @@
       </div><!-- End of Hero Container -->
 
 
-      <form id="enemy-con" class="enemy-container"><!-- Enemy Container -->
+      <form id= "enemy-con" class="enemy-container"><!-- Enemy Container -->
         <button class="generate">Choose your Enemies</button>
       </form><!-- End of Enemy Container -->
 
@@ -62,12 +62,13 @@
 
       <div class="heros"><!-- Hero Character -->
 
-         <div id="lose" class="hidden">
-            <h1>You Lose!</h1>
-          </div>
+        <div id="lose" class="hidden"><h1>You Lose!</h1><button class="reload">Start Over</button></div>
+
         <div id="batman" class="hidden"><!-- Batman -->
+
           <h1>Batman</h1>
-          <progress id="bat-health" value="1500" max="1500"></progress>
+
+          <progress id="bat-health" value="800" max="800"></progress>
 
           <img src="images/Batman_Arkham_Knight.png" />
 
@@ -82,7 +83,7 @@
         <div id="yeti" class="hidden"><!-- Yeti -->
 
           <h1>Yeti</h1>
-          <progress id="yeti-health" value="1500" max="1500"></progress>
+          <progress id="yeti-health" value="1000" max="1000"></progress>
 
           <img src="images/SnowYeti.png" />
 
@@ -98,7 +99,7 @@
         <div id="jackaloupe" class="hidden"><!-- Jackaloupe -->
 
           <h1>Jackaloupe</h1>
-          <progress id="jack-health" value="1500" max="1500"></progress>
+          <progress id="jack-health" value="600" max="600"></progress>
 
           <img src="images/Jackalope.jpg" />
 
@@ -115,13 +116,14 @@
       <div id="vs" class="hidden">
         <h1>VS</h1>
       </div>
-      <div id="win" class="win hidden" >
-            <h1>You Win!</h1>
-        </div>
+
+      <div id="win" class="win hidden" ><h1>You Win!</h1><button class="reload">Start Over</button></div>
+
       <div class="enemies"><!-- Enemy Charactera -->
         <div id="enemy-one" class="hidden"></div>
         <div id="enemy-two" class="hidden"></div>
         <div id="enemy-three" class="hidden"></div>
+
 
        <script type="text/template" id="enemies-template1">
           <!-- Enemy One -->
@@ -150,9 +152,13 @@
           </div>
         </script>
 
-       </div><!-- End of Enemy Charactera -->
+        <div id="box" class="hidden">
 
-    </div>
+        </div>
+
+      </div><!-- End of Enemy Characters -->
+
+    </div><!-- End of Battle Arena -->
 
 
     <!-- build:js scripts/vendor.js -->

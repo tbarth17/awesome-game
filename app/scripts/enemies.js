@@ -31,32 +31,33 @@ Thug.prototype.bludgeonAttack = function() {
 function beat() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
-      console.log('Thug gave you a beatdown!');
+      $(".message-box").prepend('Thug gave you a beatdown!').prepend("<br />");
       retaliatingEnemy.beatAttack();
     } else {
-      console.log("Thug missed");
+      $(".message-box").prepend("Thug missed").prepend("<br />");
     }
-};
+}
 
 function club() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
-      console.log('Thug hit you with a club');
+      $(".message-box").prepend('Thug hit you with a club').prepend("<br />");
       retaliatingEnemy.clubAttack();
     } else {
-      console.log("Thug missed");
+      $(".message-box").prepend("Thug missed").prepend("<br />");
     }
-};
+}
+
 
 function bludgeon(hero) {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
-      console.log('Thug gave you a bludgeoning!');
+      $(".message-box").prepend('Thug gave you a bludgeoning!').prepend("<br />");
       retaliatingEnemy.bludgeonAttack();
     } else {
-      console.log("Thug missed");
+      $(".message-box").prepend("Thug missed").prepend("<br />");
     }
-};
+}
 
 /////////Ruffian////////
 
@@ -91,44 +92,33 @@ selectedHero.health = (selectedHero.health - (Math.floor(Math.random()*25) + 60)
 function knife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
-      console.log('Ruffian knifed you!');
+      $(".message-box").prepend('Ruffian knifed you!').prepend("<br />");
       retaliatingEnemy.knifeAttack();
     } else {
-      console.log("Ruffian missed");
+      $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
-};
+}
 
 function pummel() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
-      console.log('Ruffian pummeled you!');
+      $(".message-box").prepend('Ruffian pummeled you!').prepend("<br />");
       retaliatingEnemy.pummelAttack();
     } else {
-      console.log("Ruffian missed");
+      $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
-};
+}
 
-function cudgel() {
-  hit = Math.floor(Math.random()*10);
-  if (hit > 5) {
-      console.log('Ruffian cudgeled you!');
-      retaliatingEnemy.cudgelAttack();
-    } else {
-      console.log("Ruffian missed");
-    }
-};
-
-function randomRuffianAttack(){
-  var attack = Math.floor(Math.random()*10);
-  if (attack <=5) {
-    knife(selectedHero);
-  } else if (8.5>= attack && attack > 5) {
-    pummel(selectedHero);
-  } else {
-    cudgel(selectedHero);
+  function cudgel() {
+    hit = Math.floor(Math.random()*10);
+    if (hit > 5) {
+        $(".message-box").prepend('Ruffian cudgeled you!').prepend("<br />");
+        retaliatingEnemy.cudgelAttack();
+      } else {
+        $(".message-box").prepend("Ruffian missed").prepend("<br />");
+      }
   }
 
-}
 
 /////////Hoodlum////////
 
@@ -162,41 +152,30 @@ selectedHero.health = (selectedHero.health - (Math.floor(Math.random()*30) + 70)
 function pocketKnife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
-      console.log('Hoodlum pocketknifed you!');
+      $(".message-box").prepend('Hoodlum pocketknifed you!').prepend("<br />");
       retaliatingEnemy.pocketKnifeAttack();
     } else {
-      console.log("Hoodlum missed");
+      $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
-};
+}
 
 function baton() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
-      console.log('Hoodlum hit you with a baton!');
+    $(".message-box").prepend('Hoodlum hit you with a baton!').prepend("<br />");
       retaliatingEnemy.batonAttack();
     } else {
-      console.log("Hoodlum missed");
+      $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
-};
+}
+
 
 function shank() {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
-      console.log('Hoodlum shanked you!');
+      $(".message-box").prepend('Hoodlum shanked you!').prepend("<br />");
       retaliatingEnemy.shankAttack();
     } else {
-      console.log("Hoodlum missed");
+      $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
-};
-
-function randomHoodlumAttack(){
-  var attack = Math.floor(Math.random()*10);
-  if (attack <=5) {
-    pocketKnife(selectedHero);
-  } else if (8.5>= attack && attack > 5) {
-    baton(selectedHero);
-  } else {
-    shank(selectedHero);
-  }
-
 }

@@ -12,7 +12,9 @@ $primary-border: solid 1px #eee;
 // Styles that apply to multiple or non-specific sections //
 
 body {
-  background: #fafafa;
+  background-image: url("http://th01.deviantart.net/fs70/PRE/i/2013/194/c/3/ancient_battleground_by_atknebula-d6d9zuz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -67,7 +69,6 @@ h2 {
   }
 }
 
-
 // ----------- Select Hero and Enemies ----------- //
 
 // Hero //
@@ -95,6 +96,12 @@ h2 {
 }
 
 
+label {
+  font-size: rem(18);
+  color: #fff;
+}
+
+
 // ----------- Hero and Enemy Battle Arena ----------- //
 
 
@@ -113,21 +120,45 @@ h2 {
 }
 
 .vs {
-  text-align: center;
+  text-align: left;
   @include span-columns(2);
+  margin: 0;
 
   h1 {
-    color: #000;
+    color: #f7f7f7;
     padding: 0;
   }
 }
 
 .enemies {
   @include span-columns(5);
+  float: right;
+  background-color: rgba(0, 0, 0, .7);
 }
 
 .enemy-selected {
-  outline: solid 3px orange;
+  outline: solid 3px #72acd3;
+}
+
+.message-box {
+  background-color: rgba(0, 0, 0, .7);
+  color: #fff;
+  font-size: rem(12);
+  height: rem(150);
+  overflow: auto;
+  margin: rem(20);
+  padding: rem(10);
+}
+
+#enemy-one,
+#enemy-two,
+#enemy-three {
+  padding: rem(10) rem(20);
+}
+
+.enemy-info {
+  padding: rem(20) rem(10);
+  display: inline-block;
 }
 
 // Hero Battle Characters //
@@ -169,7 +200,7 @@ h2 {
 .jackaloupe {
 
   h1 {
-    color: #000;
+    color: #fff;
     padding: 0;
   }
 
@@ -184,15 +215,11 @@ h2 {
 }
 
 
-// Hero Battle Characters //
+// Enemy Battle Characters //
 
 
 .thug {
   border-bottom: $primary-border;
-
-  &:focus {
-    background-color: blue;
-  }
 
   h1 {
     padding: 0;
@@ -238,17 +265,18 @@ h2 {
   }
 }
 
-.enemy-info {
-  padding: rem(20) 0;
-  display: inline-block;
-}
-
 .bat-back {
   background: url("http://static.comicvine.com/uploads/original/0/40/442952-s6_citywheel.jpg");
 }
 
 .yeti-back {
   background: url("http://freedesignfile.com/upload/2012/12/201209234220.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jack-back {
+  background: url("http://www.wallpaperup.com/uploads/wallpapers/2013/07/31/125695/48da744dffa47266070d683dbe73fa8b.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -263,7 +291,8 @@ h2 {
 
 
 .win {
-  margin-top: -600px;
+  text-align: center;
+  margin-top: -400px;
   margin-left: 50px;
   text-align: right;
   @include span-columns(10);
@@ -275,6 +304,7 @@ h2 {
 }
 
 .lose {
+  text-align: center;
   margin-top: 80px;
   text-align: center;
   @include span-columns(10);
@@ -284,5 +314,3 @@ h2 {
     padding: 0;
   }
 }
-
-

@@ -20,11 +20,6 @@ var thug,
     selectedHero;
 
 
-$(function() {
-});
-
-
-
 // Choose Your Hero //
 
 
@@ -58,6 +53,7 @@ $(".hero-button").on("click", function(event) {
     selectedHero = new Jackaloupe();
     $("#jackaloupe").removeClass("hidden");
     $("#jackaloupe").addClass("jackaloupe");
+    $("body").addClass("jack-back");
 
   }
 
@@ -78,22 +74,18 @@ $(".generate").on("click", function() {
     enemy1 = new Hoodlum();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("hoodlum");
-//    renderTemplate("enemies-template", "#enemy-one", enemy1);
-
 
   } else if (8.5>= hit1 && hit1 > 5) {
 
     enemy1 = new Ruffian();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("ruffian");
-//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
   } else {
 
     enemy1 = new Thug();
     $("#enemy-one").removeClass("hidden");
     $("#enemy-one").addClass("thug");
-//    renderTemplate("enemies-template", "#enemy-one", enemy1);
 
   }
 
@@ -103,21 +95,18 @@ $(".generate").on("click", function() {
     enemy2 = new Hoodlum();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("hoodlum");
-//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   } else if (8.5>= hit2 && hit2 > 5) {
 
     enemy2 = new Ruffian();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("ruffian");
-//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   } else {
 
     enemy2 = new Thug();
     $("#enemy-two").removeClass("hidden");
     $("#enemy-two").addClass("thug");
-//    renderTemplate("enemies-template", "#enemy-two", enemy2);
 
   }
 
@@ -127,30 +116,28 @@ $(".generate").on("click", function() {
     enemy3 = new Hoodlum();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("hoodlum");
-//    renderTemplate("#enemies-template", "#enemy-three", enemy3);
 
   } else if (8.5>= hit3 && hit3 > 5) {
 
     enemy3 = new Ruffian();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("ruffian");
-//    renderTemplate("enemies-template", "#enemy-three", enemy3);
 
   } else {
 
     enemy3 = new Thug();
     $("#enemy-three").removeClass("hidden");
     $("#enemy-three").addClass("thug");
-//    renderTemplate("enemies-template", "#enemy-three", enemy3);
+}
+  setTimeout(function() {
+    renderTemplate("enemies-template1", "#enemy-one", enemy1);
+    renderTemplate("enemies-template2", "#enemy-two", enemy2);
+    renderTemplate("enemies-template3", "#enemy-three", enemy3);
 
-  }
-setTimeout(function() {
-  renderTemplate("enemies-template1", "#enemy-one", enemy1);
-  renderTemplate("enemies-template2", "#enemy-two", enemy2);
-  renderTemplate("enemies-template3", "#enemy-three", enemy3);
+    $("#box").removeClass("hidden");
+    $("#box").addClass("message-box");
 
-}, 500);
-
+    }, 500);
 
 });
 
@@ -158,7 +145,6 @@ setTimeout(function() {
 
 $("#enemy-one").on('click', function() {
   selectedEnemy = enemy1;
-  console.log(selectedEnemy);
 
   $(this).toggleClass("enemy-selected")
   .siblings().removeClass("enemy-selected");
@@ -166,7 +152,6 @@ $("#enemy-one").on('click', function() {
 
 $("#enemy-two").on('click', function() {
   selectedEnemy = enemy2;
-  console.log(selectedEnemy);
 
   $(this).toggleClass("enemy-selected")
   .siblings().removeClass("enemy-selected");
@@ -174,12 +159,10 @@ $("#enemy-two").on('click', function() {
 
 $("#enemy-three").on('click', function() {
   selectedEnemy = enemy3;
-  console.log(selectedEnemy);
 
   $(this).toggleClass("enemy-selected")
   .siblings().removeClass("enemy-selected");
 });
-
 
 ////Enemies random attack functions////
 
@@ -218,7 +201,7 @@ function randomHoodlumAttack(hero){
 
 function enemy1RandomRetaliation() {
   if (enemy1.health <= 0) {
-    console.log(enemy1.name + ' is dead!')
+    $(".message-box").prepend(enemy1.name + ' is dead!').prepend("<br />");
   } else if (enemy1 instanceof Thug) {
     randomThugAttack();
   } else if (enemy1 instanceof Ruffian){
@@ -230,7 +213,7 @@ function enemy1RandomRetaliation() {
 
 function enemy2RandomRetaliation() {
   if (enemy2.health <= 0) {
-    console.log(enemy2.name + ' is dead!')
+    $(".message-box").prepend(enemy2.name + ' is dead!').prepend("<br />");
   } else if (enemy2 instanceof Thug) {
     randomThugAttack();
   } else if (enemy2 instanceof Ruffian){
@@ -242,7 +225,7 @@ function enemy2RandomRetaliation() {
 
 function enemy3RandomRetaliation() {
   if (enemy3.health <= 0) {
-    console.log(enemy3.name + ' is dead!')
+    $(".message-box").prepend(enemy3.name + ' is dead!').prepend("<br />");
   } else if (enemy3 instanceof Thug) {
     randomThugAttack();
   } else if (enemy3 instanceof Ruffian){
@@ -268,7 +251,6 @@ function enemyHealth() {
     $("#win").removeClass("hidden");
     $("#win").addClass("win");
   }
-
 }
 
 
@@ -288,7 +270,6 @@ $('.batarang').on('click', function() {
   enemyHealth();
 
 
-
   setTimeout(function() {
     retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
@@ -306,12 +287,6 @@ $('.batarang').on('click', function() {
       retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
       batHealth();
-
-    // console.log('Thug attacks back');
-    // console.log('Batman: ' + batman.getHealth());
-    // console.log('Thug: ' + thug.getHealth());
-    // club(batman);
-    // console.log('Batman: ' + batman.getHealth());
   }, 1500);
 
 
@@ -354,7 +329,6 @@ $('.punch').on('click', function() {
       batHealth();
     }, 1500);
 
-
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -392,7 +366,6 @@ $('.kick').on('click', function() {
       batHealth();
     }, 1500);
 
-
    if (selectedEnemy === enemy1) {
 
       $("#enemy-one").removeClass("enemy-selected");
@@ -413,6 +386,7 @@ $('.kick').on('click', function() {
 
 function yetiHealth() {
   var health = document.getElementById('yeti-health').value = selectedHero.health;
+
   if (health <= 0 ) {
     $("#yeti").addClass("hidden");
     $("#lose").removeClass("hidden");
@@ -516,7 +490,7 @@ $('.whallop').on('click', function() {
     setTimeout(function() {
       retaliatingEnemy = enemy3;
       enemy3RandomRetaliation();
-      yetiHealth();  
+      yetiHealth();
     }, 1500);
 
    if (selectedEnemy === enemy1) {
@@ -541,6 +515,7 @@ $('.whallop').on('click', function() {
 
 function jackHealth() {
   var health = document.getElementById('jack-health').value = selectedHero.health;
+
   if (health <= 0 ) {
     $("#jackaloupe").addClass("hidden");
     $("#lose").removeClass("hidden");
@@ -627,7 +602,6 @@ $('.flyingRabbitKick').on('click', function() {
   flyingRabbitKick(selectedEnemy);
   enemyHealth();
 
-
     setTimeout(function() {
       retaliatingEnemy = enemy1;
       enemy1RandomRetaliation();
@@ -659,4 +633,8 @@ $('.flyingRabbitKick').on('click', function() {
       $("#enemy-three").removeClass("enemy-selected");
 
     }
+});
+
+$(".reload").on("click", function() {
+  location.reload(true);
 });
