@@ -38,7 +38,7 @@
              <select id="hero-drop">
               <option value="Batman">Batman</option>
               <option value="Yeti">Yeti</option>
-              <option value="Jackaloupe">Jackaloup</option>
+              <option value="Jackaloupe">Jackaloupe</option>
             </select>
             <button type="submit" class="hero-button">Submit</button>
 
@@ -62,11 +62,13 @@
 
       <div class="heros"><!-- Hero Character -->
 
+        <div id="lose" class="hidden"><h1>You Lose!</h1><button class="reload">Start Over</button></div>
+
         <div id="batman" class="hidden"><!-- Batman -->
 
           <h1>Batman</h1>
 
-          <progress id="bat-health" value="1000" max="1000"></progress>
+          <progress id="bat-health" value="800" max="800"></progress>
 
           <img src="images/Batman_Arkham_Knight.png" />
 
@@ -81,7 +83,7 @@
         <div id="yeti" class="hidden"><!-- Yeti -->
 
           <h1>Yeti</h1>
-          <progress id="yeti-health" value="800" max="800"></progress>
+          <progress id="yeti-health" value="1000" max="1000"></progress>
 
           <img src="images/SnowYeti.png" />
 
@@ -115,12 +117,15 @@
         <h1>VS</h1>
       </div>
 
+      <div id="win" class="win hidden" ><h1>You Win!</h1><button class="reload">Start Over</button></div>
+
       <div class="enemies"><!-- Enemy Charactera -->
         <div id="enemy-one" class="hidden"></div>
         <div id="enemy-two" class="hidden"></div>
         <div id="enemy-three" class="hidden"></div>
-       <script type="text/template" id="enemies-template1">
 
+
+       <script type="text/template" id="enemies-template1">
           <!-- Enemy One -->
           <img src="<%= enemy1.image %>" />
           <div class="enemy-info">
@@ -153,9 +158,7 @@
 
       </div><!-- End of Enemy Characters -->
 
-
-
-    </div>
+    </div><!-- End of Battle Arena -->
 
 
     <!-- build:js scripts/vendor.js -->

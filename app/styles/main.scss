@@ -12,7 +12,7 @@ $primary-border: solid 1px #eee;
 // Styles that apply to multiple or non-specific sections //
 
 body {
-  background: url("http://th01.deviantart.net/fs70/PRE/i/2013/194/c/3/ancient_battleground_by_atknebula-d6d9zuz.jpg");
+  background-image: url("http://th01.deviantart.net/fs70/PRE/i/2013/194/c/3/ancient_battleground_by_atknebula-d6d9zuz.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -47,6 +47,27 @@ h2 {
   padding: rem(10) 0;
 }
 
+////Win and lose box////
+
+.win {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
+
+.lose {
+  text-align: center;
+  @include span-columns(2);
+
+  h1 {
+    color: #000;
+    padding: 0;
+  }
+}
 
 // ----------- Select Hero and Enemies ----------- //
 
@@ -74,10 +95,12 @@ h2 {
   text-align: center;
 }
 
+
 label {
   font-size: rem(18);
   color: #fff;
 }
+
 
 // ----------- Hero and Enemy Battle Arena ----------- //
 
@@ -138,9 +161,7 @@ label {
   display: inline-block;
 }
 
-
 // Hero Battle Characters //
-
 
 .batman {
 
@@ -162,7 +183,7 @@ label {
 .yeti {
 
   h1 {
-    color: #fff;
+    color: #000;
     padding: 0;
   }
 
@@ -199,10 +220,6 @@ label {
 
 .thug {
   border-bottom: $primary-border;
-
-  &:focus {
-    background-color: blue;
-  }
 
   h1 {
     padding: 0;
@@ -270,4 +287,30 @@ label {
   border: 1px solid #DEB887;
   border-radius: 2px;
   background: #FFF8DC;
+}
+
+
+.win {
+  text-align: center;
+  margin-top: -400px;
+  margin-left: 50px;
+  text-align: right;
+  @include span-columns(10);
+
+  h1 {
+    color: #556B2F;
+    padding: 0;
+  }
+}
+
+.lose {
+  text-align: center;
+  margin-top: 80px;
+  text-align: center;
+  @include span-columns(10);
+
+  h1 {
+    color: #8B0000;
+    padding: 0;
+  }
 }

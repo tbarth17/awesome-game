@@ -32,7 +32,7 @@ function beat() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
       $(".message-box").prepend('Thug gave you a beatdown!').prepend("<br />");
-      selectedEnemy.beatAttack();
+      retaliatingEnemy.beatAttack();
     } else {
       $(".message-box").prepend("Thug missed").prepend("<br />");
     }
@@ -42,17 +42,18 @@ function club() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
       $(".message-box").prepend('Thug hit you with a club').prepend("<br />");
-      selectedEnemy.clubAttack();
+      retaliatingEnemy.clubAttack();
     } else {
       $(".message-box").prepend("Thug missed").prepend("<br />");
     }
 }
 
+
 function bludgeon(hero) {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
       $(".message-box").prepend('Thug gave you a bludgeoning!').prepend("<br />");
-      selectedEnemy.bludgeonAttack();
+      retaliatingEnemy.bludgeonAttack();
     } else {
       $(".message-box").prepend("Thug missed").prepend("<br />");
     }
@@ -92,7 +93,7 @@ function knife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
       $(".message-box").prepend('Ruffian knifed you!').prepend("<br />");
-      selectedEnemy.knifeAttack();
+      retaliatingEnemy.knifeAttack();
     } else {
       $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
@@ -102,33 +103,22 @@ function pummel() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
       $(".message-box").prepend('Ruffian pummeled you!').prepend("<br />");
-      selectedEnemy.pummelAttack();
+      retaliatingEnemy.pummelAttack();
     } else {
       $(".message-box").prepend("Ruffian missed").prepend("<br />");
     }
 }
 
-function cudgel() {
-  hit = Math.floor(Math.random()*10);
-  if (hit > 5) {
-      $(".message-box").prepend('Ruffian cudgeled you!').prepend("<br />");
-      selectedEnemy.cudgelAttack();
-    } else {
-      $(".message-box").prepend("Ruffian missed").prepend("<br />");
-    }
-}
-
-function randomRuffianAttack(){
-  var attack = Math.floor(Math.random()*10);
-  if (attack <=5) {
-    knife(selectedHero);
-  } else if (8.5>= attack && attack > 5) {
-    pummel(selectedHero);
-  } else {
-    cudgel(selectedHero);
+  function cudgel() {
+    hit = Math.floor(Math.random()*10);
+    if (hit > 5) {
+        $(".message-box").prepend('Ruffian cudgeled you!').prepend("<br />");
+        retaliatingEnemy.cudgelAttack();
+      } else {
+        $(".message-box").prepend("Ruffian missed").prepend("<br />");
+      }
   }
 
-}
 
 /////////Hoodlum////////
 
@@ -163,7 +153,7 @@ function pocketKnife() {
   hit = Math.floor(Math.random()*10);
   if (hit > 3) {
       $(".message-box").prepend('Hoodlum pocketknifed you!').prepend("<br />");
-      selectedEnemy.pocketKnifeAttack();
+      retaliatingEnemy.pocketKnifeAttack();
     } else {
       $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
@@ -173,30 +163,19 @@ function baton() {
   hit = Math.floor(Math.random()*10);
   if (hit > 4) {
     $(".message-box").prepend('Hoodlum hit you with a baton!').prepend("<br />");
-      selectedEnemy.batonAttack();
+      retaliatingEnemy.batonAttack();
     } else {
       $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
 }
+
 
 function shank() {
   hit = Math.floor(Math.random()*10);
   if (hit > 5) {
       $(".message-box").prepend('Hoodlum shanked you!').prepend("<br />");
-      selectedEnemy.shankAttack();
+      retaliatingEnemy.shankAttack();
     } else {
       $(".message-box").prepend("Hoodlum missed").prepend("<br />");
     }
-}
-
-function randomHoodlumAttack(){
-  var attack = Math.floor(Math.random()*10);
-  if (attack <=5) {
-    pocketKnife(selectedHero);
-  } else if (8.5>= attack && attack > 5) {
-    baton(selectedHero);
-  } else {
-    shank(selectedHero);
-  }
-
 }
